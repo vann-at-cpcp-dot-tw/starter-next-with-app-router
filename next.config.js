@@ -6,9 +6,6 @@ const webpack = require('webpack')
 const nextConfig = {
   output: process.env.NEXT_OUT_PUT || '',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  experimental: {
-    appDir: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
