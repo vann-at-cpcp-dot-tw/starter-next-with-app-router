@@ -78,4 +78,8 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  corePlugins: {
+    container: false, // use custom container setting in row-col.sass
+    animation: false, // use animate.cc
+  },
 }
