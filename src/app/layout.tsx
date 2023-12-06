@@ -1,5 +1,4 @@
 import '@src/styles/main.sass'
-import '@src/app/global.css'
 
 import { isEmpty } from '@src/lib/helpers'
 import Header from '@src/components/custom/Header'

@@ -188,3 +188,6 @@ img
 // custom
 // Do not write CSS in main.sass!
 @import custom.sass
+
+// 由於 sass 處理順序和 css 有衝突，如果是以 .css 載入，或是在 layout.tsx 引入 .css 會導致 tailwind className 無法覆蓋自己寫的 & icon import 也會失效
+@import tailwind.sass
