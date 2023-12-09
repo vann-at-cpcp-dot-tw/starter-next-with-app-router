@@ -34,6 +34,8 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
+    "eslint-define-config": "^2.0.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "postcss": "^8",
     "sass": "~1.32.12",
     "stylelint": "^15.11.0",
