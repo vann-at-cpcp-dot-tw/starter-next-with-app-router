@@ -8,7 +8,6 @@ const nextConfig = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   reactStrictMode: true,
   swcMinify: true,
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   env: {},
   // assetPrefix:  process.env.NODE_ENV === "production" ?'/' :'',
   // serverRuntimeConfig: {
