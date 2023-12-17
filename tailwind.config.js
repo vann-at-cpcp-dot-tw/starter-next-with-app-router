@@ -1,5 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 
+const customColors = [
+  'major',
+  'minor',
+  'success',
+  'error',
+  'warning',
+].reduce((acc, colorKey, inde)=>{
+  return {
+    ...acc,
+    [colorKey]: {
+      DEFAULT: `var(--color-${colorKey})`,
+      50: `var(--color-${colorKey}-50)`,
+      100: `var(--color-${colorKey}-100)`,
+      200: `var(--color-${colorKey}-200)`,
+      300: `var(--color-${colorKey}-300)`,
+      400: `var(--color-${colorKey}-400)`,
+      500: `var(--color-${colorKey}-500)`,
+      600: `var(--color-${colorKey}-600)`,
+      700: `var(--color-${colorKey}-700)`,
+      800: `var(--color-${colorKey}-800)`,
+      900: `var(--color-${colorKey}-900)`,
+    }
+  }
+}, {})
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -22,6 +47,7 @@ module.exports = {
         screen: ['100vh /* fallback for Opera, IE and etc. */', '100dvh'],
       },
       colors: {
+        ...customColors,
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
