@@ -16,6 +16,7 @@ import { useStore } from '@src/store'
 import { useWindowSize } from 'react-use'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import useDomNodeSize from "@src/hooks/useDomNodeSize"
+import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import { isEmpty } from '@src/lib/helpers'
@@ -23,7 +24,10 @@ import { isEmpty } from '@src/lib/helpers'
 // styles
 import styles from '@src/components/custom/styles/index.module.sass'
 
-interface TypeProps {}
+interface TypeProps {
+  className?: string
+}
+
 interface TypeState {}
 
 function Header(props:TypeProps, ref:React.ReactNode){
@@ -42,8 +46,8 @@ function Header(props:TypeProps, ref:React.ReactNode){
 
 
   return <Suspense fallback={null}>
-    <div ref={setHeaderNode}
-    className={`fixed left-0 top-0 z-[100] w-full`}>
+    <div className={twMerge('fixed left-0 top-0 z-[100] w-full', props?.className)}
+    ref={setHeaderNode}>
       <div className="container py-7">
         <div className="row items-center">
           <div className="col-auto mr-auto">

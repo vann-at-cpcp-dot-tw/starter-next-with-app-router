@@ -17,16 +17,17 @@ import { isEmpty } from '@src/lib/helpers'
 // styles
 // import styles from '@src/components/custom/styles/index.module.sass'
 
+import { twMerge } from 'tailwind-merge'
+
 interface TypeProps {
-  className?: string
   ratio: number | string
   children: React.ReactNode
+  className?: string
 }
 
 function RatioArea(props:TypeProps){
-
   return (
-    <div className={`ratioArea relative w-full ${props?.className}`}>
+    <div className={twMerge('ratioArea relative w-full', props?.className)}>
       <div className="fill pointer-events-none relative" style={{
         width: '100%',
         paddingBottom: `${props.ratio}%`

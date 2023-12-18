@@ -10,6 +10,7 @@ import { useStore } from '@src/store'
 
 // use
 import { useWindowSize } from 'react-use'
+import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import Portal from '@src/components/custom/Portal'
@@ -31,20 +32,18 @@ function Lightbox(props:TypeProps){
   const lightboxRef = useRef(null)
 
   useEffect(()=>{
-
     if (store.lightbox.length > 0) {
       document.body.classList.add('lb-open')
     }else{
       document.body.classList.remove('lb-open')
     }
-
   }, [store.lightbox])
 
   return <>
     {
       store.lightbox.includes(props.id) && <Portal dom={document.body}>
         <div data-el="lightbox"
-        className={`${styles.lightbox} ${props?.className} ${store.lightbox[store.lightbox.length-1] === props.id ?'visible' :'invisible'}`}
+        className={twMerge(`${styles.lightbox} ${store.lightbox[store.lightbox.length-1] === props.id ?'visible' :'invisible'}`, props?.className)}
         id={props?.id}
         ref={lightboxRef}>
           <div className="inner rounded-2xl" style={{maxWidth: props?.maxWidth}} ref={innerRef}>

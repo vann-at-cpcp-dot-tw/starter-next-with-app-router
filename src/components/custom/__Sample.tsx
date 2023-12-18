@@ -16,6 +16,7 @@ import { useStore } from '@src/store'
 // use
 import { useWindowSize } from 'react-use'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
+import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import { isEmpty } from '@src/lib/helpers'
@@ -23,7 +24,10 @@ import { isEmpty } from '@src/lib/helpers'
 // styles
 import styles from '@src/components/custom/styles/index.module.sass'
 
-interface TypeProps {}
+interface TypeProps {
+  className?: string
+}
+
 interface TypeState {}
 
 function __Sample(props:TypeProps, ref:React.ReactNode){
@@ -35,7 +39,9 @@ function __Sample(props:TypeProps, ref:React.ReactNode){
   })
 
   return <Suspense fallback={null}>
+    <div className={twMerge('', props?.className)}>
 
+    </div>
   </Suspense>
 }
 

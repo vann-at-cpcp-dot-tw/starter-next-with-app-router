@@ -10,6 +10,7 @@ import { useStore } from '@src/store'
 
 // use
 import { useWindowSize } from 'react-use'
+import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import { isEmpty } from '@src/lib/helpers'
@@ -18,15 +19,15 @@ import { isEmpty } from '@src/lib/helpers'
 import styles from '@src/components/custom/styles/index.module.sass'
 
 interface TypeProps {
-  id: string,
-  color?: string,
+  id: string
+  className?: string
+  color?: string
 }
 
 function LightboxClose(props:TypeProps){
 
   const store = useStore()
   const viewport = useWindowSize()
-
 
   useEffect(()=>{
     function lightboxClickHandler(e:MouseEvent){
@@ -44,7 +45,7 @@ function LightboxClose(props:TypeProps){
     }
   }, [])
 
-  return <div className="close flex justify-end">
+  return <div className={twMerge('close flex justify-end', props?.className)}>
     <div className="btn flex h-10 w-10 items-center justify-center"
     onClick={()=>{
       store.lightboxClose(props.id)
@@ -53,7 +54,7 @@ function LightboxClose(props:TypeProps){
       marginRight: viewport.width >= 992 ?'-20px' :'-10px',
       marginTop: viewport.width >= 992 ?'-20px' :'-10px',
     }}>
-      <i className="bi bi-x-lg font-900 text-[28px] lg:text-[32px] text-secondary leading-none"
+      <i className="bi bi-x-lg font-900 text-[28px] leading-none text-secondary lg:text-[32px]"
       style={{
         color: props.color,
       }}></i>

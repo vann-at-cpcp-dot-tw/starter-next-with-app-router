@@ -16,6 +16,7 @@ import { useStore } from '@src/store'
 // use
 import { useWindowSize } from 'react-use'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
+import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import { isEmpty } from '@src/lib/helpers'
@@ -23,7 +24,9 @@ import { isEmpty } from '@src/lib/helpers'
 // styles
 import styles from '@src/components/custom/styles/index.module.sass'
 
-interface TypeProps {}
+interface TypeProps {
+  className?: string
+}
 interface TypeState {
   footerHeight: number
 }
@@ -45,7 +48,7 @@ function Footer(props:TypeProps, ref:React.ReactNode){
   }, [viewport.width, viewport.height, footerRef?.current?.clientHeight])
 
   return <Suspense fallback={null}>
-    <div className="relative" ref={footerRef}>
+    <div className={twMerge('relative', props?.className)} ref={footerRef}>
       <div className="container flex justify-center py-5">::: Footer :::</div>
     </div>
   </Suspense>
