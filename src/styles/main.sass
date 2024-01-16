@@ -10,7 +10,9 @@
   -webkit-overflow-scrolling: touch
   word-break: break-word
   word-wrap: break-word
+  white-space: pre-wrap
   -webkit-tap-highlight-color: transparent
+  min-width: 0
   &:focus
     outline: none
 
@@ -20,6 +22,7 @@ body
   // height: 100%
   padding: 0px
   margin: 0px
+  min-height: 100dvh
   font-family: source-han-sans-traditional, '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'Microsoft JhengHei', '微軟正黑體', sans-serif
   font-size: 16px
   // overscroll-behavior: none // 捲到頂/底部時，不要Q彈
@@ -81,6 +84,12 @@ img
   display: block
   user-drag: none
   user-select: none
+
+h1, h2, h3, h4
+  text-wrap: balance
+
+p
+  text-wrap: pretty
 
 // for 編輯器
 .MCE-CONTENT
