@@ -6,8 +6,6 @@ module.exports = defineConfig({
     "plugin:tailwindcss/recommended"
   ],
   globals: {
-    $: 'readonly',
-    jQuery: 'readonly',
     _: 'readonly',
     lodash: 'readonly',
   },

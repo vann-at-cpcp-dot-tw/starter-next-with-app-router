@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+certificates
 
 # debug
 npm-debug.log*
@@ -27,6 +28,12 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
+# i18n setting
+i18n.config.ts
+
+# editor
+.vscode
 
 # vercel
 .vercel

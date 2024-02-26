@@ -190,22 +190,6 @@ export const charBytes = function(str){
   return str.replace(/[^\x00-\xff]/g,'xx').length
 }
 
-// export const isElInViewport = (el)=>{
-//   // Special bonus for those using jQuery
-//   if (typeof jQuery === 'function' && el instanceof jQuery){
-//     el = el[0]
-//   }
-
-//   var rect = el.getBoundingClientRect()
-
-//   return (
-//     rect.top >= 0 &&
-//       rect.left >= 0 &&
-//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//   )
-// }
-
 export const strWidth = function(text='', fontCssProps = '1rem'){
   const dom = document.createElement('div')
   dom.textContent = text

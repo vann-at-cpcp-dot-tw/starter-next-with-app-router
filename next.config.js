@@ -4,7 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const nextConfig = {
-  output: process.env.NEXT_OUT_PUT || 'standalone',
+  // output: process.env.NEXT_OUT_PUT || 'standalone',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   reactStrictMode: true,
   swcMinify: true,
@@ -24,8 +24,6 @@ const nextConfig = {
   webpack: (config, { dev, isServer })=>{
     config.plugins.push(
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
         React: 'react',
       })
     )

@@ -370,7 +370,7 @@
 
 //gap 調整
 $remPerUnit: 0.25
-$gapList: (0, 1, 2, 4, 5, 8, 10, 14)
+$gapList: (0, 2, 5, 8, 10)
 @each $gap in $gapList
   .row-gap-#{$gap}
     margin-right: - ($gap / 2 * $remPerUnit) + rem

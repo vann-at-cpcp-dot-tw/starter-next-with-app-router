@@ -1,3 +1,4 @@
+import '@root/public/import.css'
 import '@src/styles/main.sass'
 
 import { isEmpty } from '@src/lib/helpers'
