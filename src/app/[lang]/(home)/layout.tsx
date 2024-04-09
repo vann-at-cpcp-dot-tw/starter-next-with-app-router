@@ -1,5 +1,6 @@
 import { cloneElement } from 'react'
-import { isEmpty } from '@src/helpers'
+import { isEmpty } from '~/lib/helpers'
+import { ScopeStoreProvider } from "vanns-common-modules/dist/providers/react"
 
 async function getHomePageData(){
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/wp-json/api/v1/homeDatas`, {
@@ -13,26 +14,23 @@ async function getHomePageData(){
 
   // return json?.data
 
-  return {}
+  return {hello:'world'}
 }
 
 export default async function HomeLayout({
-  children,
   params,
+  children,
 }:{
-  children: React.ReactNode,
   params: {
-    data: {
-      [key:string]: any
-    }
-  };
+    lang: string
+  }
+  children: React.ReactNode,
 }) {
 
   const data = await getHomePageData()
-  params.data = data
 
-  return <>
+  return <ScopeStoreProvider state={{data}}>
     { children }
-  </>
+  </ScopeStoreProvider>
 
 }

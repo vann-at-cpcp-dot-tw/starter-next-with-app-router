@@ -1,6 +1,7 @@
 @import before-after.sass
 @import bootstrap-icons.sass
 @import btn.sass
+@import header.sass
 
 *
   box-sizing: border-box
@@ -21,10 +22,21 @@ html,
 body
   padding: 0px
   margin: 0px
-  font-family: 'cairo', sans-serif
+  font-family: PingFangTC, Noto Sans TC, Microsoft JhengHei, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif
   font-size: 16px
   min-height: 100dvh
-  background: var(--color-golden-100)
+  color: var(--color-gray-800)
+  // font-weight: 400
+  // text-size-adjust: none
+  // -webkit-text-size-adjust: none
+  // -moz-text-size-adjust: none
+  // -ms-text-size-adjust: none
+  // @apply lg:bg-gray-50 bg-white
+  //   &.OS-Windows,
+  //   &.OS-Android
+  //       .font-500
+  //           font-weight: 500
+  //           font-weight: bold !important
   // overscroll-behavior: none // 捲到頂/底部時，不要Q彈
   // Adobe source-han-sans-traditional Font Weight Setting
   // ExtraLight 100
@@ -35,19 +47,7 @@ body
   // Bold 700
   // Heavy 900
 
-.serif
-  font-family: 'kepler-std-display', serif
-
-// html
-//   &.lg-on
-//     overflow: hidden
-//     body
-//       overflow: hidden
-
 body
-  opacity: 0
-  &.page-loaded
-    opacity: 1
   &.lb-open
     overflow: hidden
     &::after
@@ -68,7 +68,6 @@ body
 
 #app
   position: relative
-  @apply h-screen flex flex-col flex-nowrap
 
 .sticky
   position: relative
@@ -111,150 +110,3 @@ h1, h2, h3, h4
 p
   text-wrap: pretty
 
-#nprogress
-  visibility: hidden
-
-.swiper-wrapper
-  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000) !important
-
-.swiper-milestone
-  @apply relative
-  &-timeline
-    &:after
-      content: ''
-      display: block
-      @apply absolute w-full h-[1px] left-0 bottom-[29px] bg-white
-  .swiper-wrapper
-    display: flex
-    align-items: stretch
-    transition-duration: .8s !important
-  .swiper-slide
-    width: auto !important
-    height: auto !important
-    @apply flex flex-col flex-nowrap
-    .slide-inner
-      position: relative
-      // width: 22.7vw
-      width: 52.7vw
-      padding: 0px 20px
-      transition: all .8s cubic-bezier(0.215, 0.610, 0.355, 1.000)
-      @media(max-width: 991px)
-        // width: 75vw
-        width: calc(100vw - 64px)
-        padding: 0px 8px
-    .title
-      @apply text-gray-500
-    // .description
-    //   @apply line-clamp-1
-    .line
-      @apply absolute lg:left-5 left-2 bottom-[28px] w-full h-[4px]
-      &:after
-        content: ''
-        display: block
-        transition: all .8s cubic-bezier(0.215, 0.610, 0.355, 1.000)
-        @apply absolute bg-white w-full h-[1px] left-0 top-1/2 -translate-y-1/2
-    &-active
-      .slide-inner
-        width: 52.7vw
-        @media(max-width: 991px)
-          // width: 100vw
-          width: calc(100vw - 64px)
-      .title
-        @apply text-golden-700
-      .description
-        @apply line-clamp-none
-      .line
-        &:after
-          @apply bg-golden-700 h-full
-
-.swiper-yacht-exterior
-  @apply -mx-5 relative
-  .swiper-wrapper
-    display: flex
-    align-items: center
-    transition-duration: .8s !important
-  .swiper-slide
-    width: auto !important
-    display: flex
-    align-items: center
-    .slide-inner
-      position: relative
-      width: 39vw
-      padding: 0px 20px
-      transition: all .8s cubic-bezier(0.215, 0.610, 0.355, 1.000)
-      @media(max-width: 991px)
-        width: 75vw
-        padding: 0px 8px
-    &-active
-      .slide-inner
-        width: 76.35vw
-        @media(max-width: 991px)
-          width: calc(100vw - 40px)
-
-.lg-container
-  *
-    white-space: normal
-
-.lg-backdrop
-  background-color: rgba(0, 0, 0, 0.9) !important
-
-.lg-outer
-  .lg-thumb-outer
-    background-color: rgba(0, 0, 0, 0.5) !important
-  .lg-thumb-item
-    &:hover,
-    &.active
-      border-color: var(--color-golden-900) !important
-
-.lg-progress-bar
-  .lg-progress
-    background-color: var(--color-golden-900) !important
-
-.lg-toolbar
-  display: flex
-  .lg-close
-    order: 1
-    margin-right: auto
-  .lg-counter
-    order: 2
-    padding: 10px 0px
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    // margin-right: auto
-  .lg-toggle-thumb
-    order: 3
-  .lg-zoom-out
-    order: 4
-  .lg-zoom-in
-    order: 5
-  .lg-autoplay-button
-    order: 6
-  .lg-download
-    order: 7
-  .lg-fullscreen
-    order: 8
-
-.dealersColumn
-  width: 100%
-  margin: 0 auto
-  // column-count: 2
-  column-gap: 40px
-  @media ( max-width: 991px)
-    column-count: 1
-    column-gap: 0px
-  > .item
-      break-inside: avoid
-
-
-.animate__float
-  animation-name: float
-  animation-direction: alternate
-  // animation-timing-function: linear
-  animation-duration: 0.75s
-@keyframes float
-  0%
-    transform: translateY(8px)
-  100%
-    transform: translateY(-8px)

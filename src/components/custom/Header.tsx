@@ -6,23 +6,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 // routes
-import { routes, menu, TypeRouteNode } from '@src/routes'
+import { menu, TypeRouteNode } from '~/routes'
 import { useRouter } from 'next/navigation'
 
 // store
-import { useStore } from '@src/store'
+import { useStore } from '~/store'
 
 // use
-import { useWindowSize } from 'react-use'
+import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { useQuery, useMutation, useQueryClient } from 'react-query'
-import useDomNodeSize from "@src/hooks/useDomNodeSize"
+import { useDomNodeSize } from "vanns-common-modules/dist/use/react"
 import { twMerge } from 'tailwind-merge'
 
 // methods & components
-import { isEmpty } from '@src/lib/helpers'
+import { isEmpty } from '~/lib/helpers'
 
 // styles
-import styles from '@src/components/custom/styles/index.module.sass'
+import styles from '~/components/custom/styles/index.module.sass'
 
 interface TypeProps {
   className?: string
@@ -52,7 +52,7 @@ function Header(props:TypeProps, ref:React.ReactNode){
         <div className="row items-center">
           <div className="col-auto mr-auto">
             <Link href="/">
-              <img src="/next.svg" style={{ width: '90px' }} />
+              <Image src="/next.svg" width={90} height={90} alt="" />
             </Link>
           </div>
           {

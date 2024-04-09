@@ -1,5 +1,5 @@
 "use client"
-
+import '~/styles/index.sass'
 import { useState, ReactNode, createContext } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 

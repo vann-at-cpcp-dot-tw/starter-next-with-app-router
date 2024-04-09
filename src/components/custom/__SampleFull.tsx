@@ -1,13 +1,15 @@
 "use client"
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+
 import { Suspense, forwardRef, useState, useRef, useReducer, useEffect, useMemo, useCallback } from 'react'
 
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/image"
+import LinkWithLang from "~/components/custom/LinkWithLang"
 
 // routes
-import { routes } from '~/routes'
 import { useRouter } from 'next/navigation'
 
 // store
@@ -16,42 +18,31 @@ import { useStore } from '~/store'
 // use
 import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import { isEmpty } from '~/lib/helpers'
+import { twMerge } from 'tailwind-merge'
 
 // styles
 import styles from '~/components/custom/styles/index.module.sass'
 
 interface TypeProps {
-  className?: string
+  [key:string]: any
 }
-interface TypeState {
-  footerHeight: number
-}
+interface TypeState {}
 
-function Footer(props:TypeProps, ref:React.ReactNode){
+function __SampleFull(props:TypeProps, ref:React.ReactNode){
   const store = useStore()
   const router = useRouter()
   const viewport = useWindowSize()
-  const footerRef = useRef<HTMLDivElement>(null)
   const [state, setState] = useReducer((state:TypeState, updateState:{})=>({...state, ...updateState}), {
     // init state
-    footerHeight: 0,
   })
-
-  useEffect(()=>{
-    setState({
-      footerHeight: footerRef.current?.clientHeight || 0,
-    })
-  }, [viewport.width, viewport.height, footerRef?.current?.clientHeight])
+  const { className } = props
 
   return <Suspense fallback={null}>
-    <div className={twMerge('relative', props?.className)} ref={footerRef}>
-      <div className="container flex justify-center py-5">::: Footer :::</div>
-    </div>
+    <div className={twMerge('', className)}></div>
   </Suspense>
 }
 
-export default Footer
+export default __SampleFull

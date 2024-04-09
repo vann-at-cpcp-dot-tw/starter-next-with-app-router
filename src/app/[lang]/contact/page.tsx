@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import { useStore } from '@src/store'
-import { useWindowSize } from 'react-use'
-import { Button } from '@src/components/ui/button'
+import { useStore } from '~/store'
+import { useWindowSize } from "vanns-common-modules/dist/use/react"
+import { Button } from '~/components/ui/button'
 
 export default function Contact(){
 

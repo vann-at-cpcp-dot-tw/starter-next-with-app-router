@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "imagesloaded": "^5.0.0",
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.292.0",
+    "negotiator": "^0.6.3",
     "next": "^14.0.3",
     "react": "^18",
     "react-dom": "^18",
@@ -23,12 +25,14 @@
     "sharp": "^0.33.2",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
+    "vanns-common-modules": "https://github.com/vann-at-cpcp-dot-tw/vanns-common-modules.git",
     "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "^18.2.75",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

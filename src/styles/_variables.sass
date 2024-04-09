@@ -1,3 +1,4 @@
+
 // @media (min-width: 576px)  //sm
 // @media (min-width: 768px)  //md
 // @media (min-width: 992px)  //lg
@@ -7,77 +8,172 @@
 // @media (min-width: 1920px) //xxxxl //未開放
 
 //Breakpoints
-$bg-sm: 576
-$bp-sm: 576
-$bp-md: 768
-$bp-lg: 992
-$bp-xl: 1200
-$bp-xxl: 1400
-$bp-xxxl: 1600
-$bp-xxxxl: 1920
+$screen-xs: 0
+$screen-sm: 576
+$screen-md: 768
+$screen-lg: 992
+$screen-xl: 1200
+$screen-2xl: 1400
+$screen-3xl: 1600
+$screen-4xl: 1920
+$screen-_xs: 0
+$screen-_sm: 575
+$screen-_md: 767
+$screen-_lg: 991
+$screen-_xl: 1199
+$screen-_2xl: 1399
+$screen-_3xl: 1599
+$screen-_4xl: 1919
 
 :root
-  //Colors
-  --color-major: #012167
-  --color-major-100: #385baa
-  --color-major-300: #002a88
-  --color-major-500: #012167
-  --color-major-700: #00123a
-  --color-major-900: #09162e
-  --color-major-950: #040922
+    //Colors
+    --color-gray: #b4b4b4
+    --color-gray-50: #f6f6f6
+    --color-gray-100: #f3f3f3
+    --color-gray-200: #ebebeb
+    --color-gray-300: #dedede
+    --color-gray-400: #cccccc
+    --color-gray-500: #b4b4b4
+    --color-gray-600: #949494
+    --color-gray-700: #6b6b6b
+    --color-gray-800: #3c3c3c
+    --color-gray-900: #0a0a0a
 
-  --color-minor: #4a85a0
-  --color-minor-100: #9ec2d1
-  --color-minor-500: #4a85a0
-  --color-minor-900: #002e4f
+    --color-main: #da3932
+    --color-main-50: #fff1f1
+    --color-main-100: #fdd5d4
+    --color-main-200: #fabab9
+    --color-main-300: #f48380
+    --color-main-400: #e95853
+    --color-main-500: #da3932
+    --color-main-600: #c71a14
+    --color-main-700: #ad0c08
+    --color-main-800: #8d0503
+    --color-main-900: #6b0000
 
-  --color-golden: #dccbaf
-  --color-golden-100: #faf8f5
-  --color-golden-300: #f3f0ea
-  --color-golden-500: #dccbaf
-  --color-golden-700: #c6a061
-  --color-golden-900: #b5873c
+    --color-secondary: #5478e0
+    --color-secondary-50: #f7faff
+    --color-secondary-100: #e0ecfd
+    --color-secondary-200: #cadcfc
+    --color-secondary-300: #a3b8f5
+    --color-secondary-400: #7196ed
+    --color-secondary-500: #5478e0
+    --color-secondary-600: #325dce
+    --color-secondary-700: #1a44b6
+    --color-secondary-800: #0a2799
+    --color-secondary-900: #05017a
 
-  --color-gray: #9b9b9b
-  --color-gray-100: #fbf9f6
-  --color-gray-200: #EFEFF0
-  --color-gray-300: #b6b6b6
-  --color-gray-500: #9b9b9b
-  --color-gray-700: #727071
-  --color-gray-900: #4a4a4a
+    --color-blue: #5478e0
+    --color-blue-50: #f7faff
+    --color-blue-100: #e0ecfd
+    --color-blue-200: #cadcfc
+    --color-blue-300: #a3b8f5
+    --color-blue-400: #7196ed
+    --color-blue-500: #5478e0
+    --color-blue-600: #325dce
+    --color-blue-700: #1a44b6
+    --color-blue-800: #0a2799
+    --color-blue-900: #05017a
 
-  --color-success:     #64a168
-  --color-success-50:  #f5fcf0
-  --color-success-100: #e1f3d7
-  --color-success-200: #c7e6bd
-  --color-success-300: #a9d5a0
-  --color-success-400: #86be83
-  --color-success-500: #64a168
-  --color-success-600: #5e8760
-  --color-success-700: #4e644f
-  --color-success-800: #323b33
-  --color-success-900: #0e0f0e
+    --color-ten: #dea069
+    --color-ten-50: #fffaf2
+    --color-ten-100: #fdf0de
+    --color-ten-200: #fbe6ca
+    --color-ten-300: #f5d0a4
+    --color-ten-400: #ebb983
+    --color-ten-500: #dea069
+    --color-ten-600: #cd8553
+    --color-ten-700: #b66742
+    --color-ten-800: #9b4b33
+    --color-ten-900: #7d3427
 
-  --color-warning:     #f1cd28
-  --color-warning-50:  #fffdf0
-  --color-warning-100: #fffbd1
-  --color-warning-200: #fff9b0
-  --color-warning-300: #fceb7b
-  --color-warning-400: #f9df62
-  --color-warning-500: #f1cd28
-  --color-warning-600: #ccb02e
-  --color-warning-700: #9f8b2f
-  --color-warning-800: #695e28
-  --color-warning-900: #302c17
+    --color-success: #64a168
+    --color-success-50: #f5fcf0
+    --color-success-100: #e1f3d7
+    --color-success-200: #c7e6bd
+    --color-success-300: #a9d5a0
+    --color-success-400: #86be83
+    --color-success-500: #64a168
+    --color-success-600: #5e8760
+    --color-success-700: #4e644f
+    --color-success-800: #323b33
+    --color-success-900: #0e0f0e
 
-  --color-error:     #DA3932
-  --color-error-50:  #F6CFCE
-  --color-error-100: #F3BFBC
-  --color-error-200: #ED9D9A
-  --color-error-300: #E67C77
-  --color-error-400: #E05A55
-  --color-error-500: #DA3932
-  --color-error-600: #B42720
-  --color-error-700: #841C18
-  --color-error-800: #54120F
-  --color-error-900: #250807
+    --color-warning: #f1cd28
+    --color-warning-50: #fffdf0
+    --color-warning-100: #fffbd1
+    --color-warning-200: #fff9b0
+    --color-warning-300: #fceb7b
+    --color-warning-400: #f9df62
+    --color-warning-500: #f1cd28
+    --color-warning-600: #ccb02e
+    --color-warning-700: #9f8b2f
+    --color-warning-800: #695e28
+    --color-warning-900: #302c17
+
+    --color-error: #da3932
+
+    --color-cyan: #68c4e9
+    --color-cyan-50: #f1fbfc
+    --color-cyan-100: #e0f9fe
+    --color-cyan-200: #cef7ff
+    --color-cyan-300: #a6ebfd
+    --color-cyan-400: #84daf6
+    --color-cyan-500: #68c4e9
+    --color-cyan-600: #4ba3cd
+    --color-cyan-700: #347ea9
+    --color-cyan-800: #22587e
+    --color-cyan-900: #06292e
+
+    --color-teal: #00b5aa
+    --color-teal-50: #ebf9f8
+    --color-teal-100: #e1f5f4
+    --color-teal-200: #c2ecea
+    --color-teal-300: #8fdddd
+    --color-teal-400: #32c9c6
+    --color-teal-500: #00b5aa
+    --color-teal-600: #099da2
+    --color-teal-700: #117a89
+    --color-teal-800: #175a6b
+    --color-teal-900: #183b49
+
+    --color-gray-cool: #aeb4c5
+    --color-gray-cool-50: #f7fbfc
+    --color-gray-cool-100: #f2f6f9
+    --color-gray-cool-200: #ecf0f5
+    --color-gray-cool-300: #d9e1eb
+    --color-gray-cool-400: #c5cddb
+    --color-gray-cool-500: #aeb4c5
+    --color-gray-cool-600: #8c96a9
+    --color-gray-cool-700: #677483
+    --color-gray-cool-800: #3f4b55
+    --color-gray-cool-900: #192024
+
+    --color-purple: #9183d8
+    --color-purple-50: #f9f6ff
+    --color-purple-100: #f0edf9
+    --color-purple-200: #e7e4f3
+    --color-purple-300: #d4cdec
+    --color-purple-400: #b6ace3
+    --color-purple-500: #9183d8
+    --color-purple-600: #7a64d5
+    --color-purple-700: #684ccb
+    --color-purple-800: #5839b4
+    --color-purple-900: #412782
+
+    --shadow-tiny: 0 1px 4px 0
+    --shadow-thin: 0 2px 8px 0
+
+.theme-tenant,
+[data-theme="tenant"]
+    --color-secondary: #dea069
+    --color-secondary-50: #fffaf2
+    --color-secondary-100: #fdf0de
+    --color-secondary-200: #fbe6ca
+    --color-secondary-300: #f5d0a4
+    --color-secondary-400: #ebb983
+    --color-secondary-500: #dea069
+    --color-secondary-600: #cd8553
+    --color-secondary-700: #b66742
+    --color-secondary-800: #9b4b33
+    --color-secondary-900: #7d3427

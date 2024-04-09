@@ -1,11 +1,9 @@
-import '@root/public/import.css'
-import '@src/styles/main.sass'
+import '~~/public/external-import.css'
 
-import { isEmpty } from '@src/lib/helpers'
-import Header from '@src/components/custom/Header'
-import Footer from '@src/components/custom/Footer'
-import StoreSync from '@src/components/custom/StoreSync'
-import Providers from './providers'
+import { isEmpty } from '~/lib/helpers'
+import Header from '~/components/custom/Header'
+import Footer from '~/components/custom/Footer'
+import Providers from '~/app/[lang]/providers'
 
 export const metadata = {
   title: 'NEXT WITH APP ROUTER',

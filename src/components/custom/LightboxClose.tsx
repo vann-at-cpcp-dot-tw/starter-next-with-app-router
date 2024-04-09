@@ -3,20 +3,20 @@
 import { Suspense, useState, useEffect, useMemo, useCallback } from 'react'
 
 // routes
-import { routes } from '@src/routes'
+import { routes } from '~/routes'
 
 // store
-import { useStore } from '@src/store'
+import { useStore } from '~/store'
 
 // use
-import { useWindowSize } from 'react-use'
+import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { twMerge } from 'tailwind-merge'
 
 // methods & components
-import { isEmpty } from '@src/lib/helpers'
+import { isEmpty } from '~/lib/helpers'
 
 // styles
-import styles from '@src/components/custom/styles/index.module.sass'
+import styles from '~/components/custom/styles/index.module.sass'
 
 interface TypeProps {
   id: string
@@ -43,18 +43,19 @@ function LightboxClose(props:TypeProps){
     return function(){
       document.body.removeEventListener('click', lightboxClickHandler)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <div className={twMerge('close flex justify-end', props?.className)}>
-    <div className="btn flex h-10 w-10 items-center justify-center"
+    <div className="btn flex size-10 items-center justify-center"
     onClick={()=>{
       store.lightboxClose(props.id)
     }}
     style={{
-      marginRight: viewport.width >= 992 ?'-20px' :'-10px',
-      marginTop: viewport.width >= 992 ?'-20px' :'-10px',
+      marginRight: viewport.width && viewport.width >= 992 ?'-20px' :'-10px',
+      marginTop: viewport.width && viewport.width >= 992 ?'-20px' :'-10px',
     }}>
-      <i className="bi bi-x-lg font-900 text-[28px] leading-none text-secondary lg:text-[32px]"
+      <i className="bi bi-x-lg text-[28px] font-900 leading-none text-secondary lg:text-[32px]"
       style={{
         color: props.color,
       }}></i>
