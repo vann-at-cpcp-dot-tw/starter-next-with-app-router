@@ -5,7 +5,6 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 import { Suspense, forwardRef, useState, useRef, useReducer, useEffect, useMemo, useCallback } from 'react'
 
-import dynamic from 'next/dynamic'
 import Image from "next/image"
 import LinkWithLang from "~/components/custom/LinkWithLang"
 
@@ -22,9 +21,6 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 // methods & components
 import { isEmpty } from '~/lib/helpers'
 import { twMerge } from 'tailwind-merge'
-
-// styles
-import styles from '~/components/custom/styles/index.module.sass'
 
 interface TypeProps {
   [key:string]: any

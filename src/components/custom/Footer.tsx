@@ -1,28 +1,10 @@
 "use client"
 
-import { Suspense, forwardRef, useState, useRef, useReducer, useEffect, useMemo, useCallback } from 'react'
-
-import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import Image from 'next/image'
-
-// routes
-import { routes } from '~/routes'
+import { Suspense, useRef, useReducer, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-
-// store
 import { useStore } from '~/store'
-
-// use
 import { useWindowSize } from "vanns-common-modules/dist/use/react"
-import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { twMerge } from 'tailwind-merge'
-
-// methods & components
-import { isEmpty } from '~/lib/helpers'
-
-// styles
-import styles from '~/components/custom/styles/index.module.sass'
 
 interface TypeProps {
   className?: string
