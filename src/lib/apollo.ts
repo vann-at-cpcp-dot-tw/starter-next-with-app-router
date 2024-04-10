@@ -23,7 +23,7 @@ const { getClient } = makeApolloClient({
 const fetchGQLWrapper = makeFetcher(getClient)
 
 export async function fetchGQL(query:TypedDocumentNode, args?:IFetchGQLArgs){
-  const { context, ...restArgs } = args
+  const { context, ...restArgs } = args ?? {}
   const headers = context?.headers || {}
   // const localeCode = convertLocaleCode(lang, 'long')
   return await fetchGQLWrapper(query, {
