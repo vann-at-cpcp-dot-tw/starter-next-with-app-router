@@ -29,7 +29,7 @@ export async function fetchGQL(query:TypedDocumentNode, args:IFetchGQLArgs){
   return await fetchGQLWrapper(query, {
     ...restArgs,
     context: {
-      ...context,
+      ...(context || {}),
       headers: {
         ...headers
         // "accept-language": localeCode
