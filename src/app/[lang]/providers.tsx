@@ -1,12 +1,7 @@
-"use client"
 import '~/styles/index.sass'
-import { useState, ReactNode, createContext } from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
-
-export interface CommonDataContextType {
-  [key: string]: any
-}
-export const CommonDataContext = createContext<CommonDataContextType>({})
+import { ReactNode } from 'react'
+import { CommonDataProvider } from "~/providers/CommonData"
+import { ReactQueryClientProvider } from "vanns-common-modules/dist/providers/react"
 
 export default function Providers({
   children,
@@ -17,12 +12,10 @@ export default function Providers({
     [key: string]: any
   }
 }) {
-  const [queryClient] = useState(() => new QueryClient())
 
-  return <QueryClientProvider client={queryClient}>
-    <CommonDataContext.Provider value={commonData}>
-      {children}
-    </CommonDataContext.Provider>
-  </QueryClientProvider>
-
+  return <ReactQueryClientProvider>
+    <CommonDataProvider commonData={commonData}>
+      { children }
+    </CommonDataProvider>
+  </ReactQueryClientProvider>
 }

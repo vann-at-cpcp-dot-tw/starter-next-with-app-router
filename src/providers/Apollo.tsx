@@ -1,7 +1,7 @@
 "use client"
 
 const API_URL = `${process.env.NEXT_PUBLIC_API_BASE}graphql`
-
+import { ReactNode } from 'react'
 import { makeApolloClient, ApolloClientProvider } from "vanns-common-modules/dist/lib/next/apollo/client"
 import { i18n } from "~~/i18n.config"
 import { useLangGuard } from "vanns-common-modules/dist/use/next/useLangGuard"
@@ -9,7 +9,7 @@ import { useLangGuard } from "vanns-common-modules/dist/use/next/useLangGuard"
 export default function ApolloProvider({
   children
 }:{
-  children: React.ReactNode,
+  children: ReactNode,
 }){
   const { localeCode } = useLangGuard(i18n)
 
