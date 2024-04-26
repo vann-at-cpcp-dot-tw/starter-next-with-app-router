@@ -1,9 +1,9 @@
 "use client"
 
-import { createCommonDataContext } from "vanns-common-modules/dist/providers/react/CommonData"
+import { createScopeStoreProvider } from "vanns-common-modules/dist/providers/react"
 
-export interface CommonDataContextType {
-  [key: string]: any
+interface ICommonData {
+  [key:string]: any
 }
 
-export const { Context: CommonDataContext, Provider: CommonDataProvider } = createCommonDataContext<CommonDataContextType>()
+export const { ScopeStoreProvider:CommonDataProvider, useScopeStore:useCommonData } = createScopeStoreProvider<ICommonData>()

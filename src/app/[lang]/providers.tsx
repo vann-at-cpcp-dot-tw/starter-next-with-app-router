@@ -14,7 +14,7 @@ export default function Providers({
 }) {
 
   return <ReactQueryClientProvider>
-    <CommonDataProvider commonData={commonData}>
+    <CommonDataProvider state={commonData}>
       { children }
     </CommonDataProvider>
   </ReactQueryClientProvider>
