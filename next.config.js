@@ -4,8 +4,6 @@ const path = require('path')
 const webpack = require('webpack')
 
 const nextConfig = {
-  // output: process.env.NEXT_OUT_PUT || 'standalone',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   reactStrictMode: true,
   swcMinify: true,
   env: {},
@@ -38,7 +36,7 @@ const nextConfig = {
 
     return config
   },
-  trailingSlash: true, // for exportPathMap
+  trailingSlash: false, // for exportPathMap
   // exportPathMap: process.env.NODE_ENV === 'production'
   // ?async function(defaultPathMap, { dev, dir, outDir, distDir, buildId }){
   //     defaultPathMap['404'] = defaultPathMap['/_error']

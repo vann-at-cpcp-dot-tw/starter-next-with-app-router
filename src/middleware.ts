@@ -1,50 +1,30 @@
-"use server"
-
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { i18n } from '~~/i18n.config'
-import { match as matchLocale } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
-
-
-function getLocale(request: NextRequest): string | undefined {
-  const negotiatorHeaders: Record<string, string> = {}
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
-
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales.map((node)=>node.shortCode)
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages()
-
-  const locale = matchLocale(languages, locales, i18n.defaultLocale.shortCode)
-  return locale
-}
+import { isPathnameStartWithLang } from 'vanns-common-modules/dist/use/next/usePathnameWithoutLang'
 
 export async function middleware(request:NextRequest){
 
-
   let response = NextResponse.next()
-  const headers = request.headers
+  const requestHeaders = request.headers
   const pathname = request.nextUrl.pathname
   const { searchParams } = request.nextUrl
 
   // Redirect if there is no locale
   const pathnameIsMissingLocale = i18n.locales.every((locale, index) => {
-    return !pathname.startsWith(`/${locale.shortCode}/`) && pathname !== `/${locale.shortCode}`
+    return !isPathnameStartWithLang(pathname,locale.shortCode) && pathname !== `/${locale.shortCode}`
   })
 
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
-    if( locale === i18n.defaultLocale.shortCode ){
-      const url = new URL(`/${locale}${pathname.startsWith('/') ?'' : '/'}${pathname}`, request.url)
-      // url.search = searchParams.toString()
-      response = NextResponse.rewrite(url)
-    }else{
-      const url = new URL(`/${locale}${pathname.startsWith('/') ?'' : '/'}${pathname}`, request.url)
-      // url.search = searchParams.toString()
-      response = NextResponse.redirect(url)
-    }
+    const url = new URL(`/${i18n.defaultLocale.shortCode}${pathname.startsWith('/') ?'' : '/'}${pathname}`, request.url)
+    // TODO:導轉語言時，將 query 帶著各有優缺點，需視專案情況不同調整(如換語言後 page 不同)
+    // url.search = searchParams.toString()
+    response = NextResponse.rewrite(url)
   }
 
+  const requestLang = pathname.split('/')[1] || ''
+  const isSupportedLang = i18n.locales.find((node)=>node.shortCode === requestLang)
+  response.headers.set('x-lang', isSupportedLang ?requestLang :i18n.defaultLocale.shortCode)
   response.headers.set('x-url', request.url)
 
   return response
