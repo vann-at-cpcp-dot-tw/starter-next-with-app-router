@@ -6,7 +6,7 @@ import { Suspense } from 'react'
 import Image from "next/image"
 import LinkWithLang from "~/components/custom/LinkWithLang"
 import { twMerge } from 'tailwind-merge'
-import { isEmpty } from '~/lib/helpers'
+import { isEmpty } from '~/lib/utils'
 
 // import { useRouter } from 'next/navigation'
 // import { useStore } from '~/store'

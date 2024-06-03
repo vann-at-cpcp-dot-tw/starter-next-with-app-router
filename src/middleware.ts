@@ -17,6 +17,7 @@ export async function middleware(request:NextRequest){
 
   if (pathnameIsMissingLocale) {
     const url = new URL(`/${i18n.defaultLocale.shortCode}${pathname.startsWith('/') ?'' : '/'}${pathname}`, request.url)
+
     // TODO:導轉語言時，將 query 帶著各有優缺點，需視專案情況不同調整(如換語言後 page 不同)
     // url.search = searchParams.toString()
     response = NextResponse.rewrite(url)

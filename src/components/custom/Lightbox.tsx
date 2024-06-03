@@ -14,7 +14,7 @@ import { twMerge } from 'tailwind-merge'
 
 // methods & components
 import Portal from 'vanns-common-modules/dist/components/react/Portal'
-import { isEmpty } from '~/lib/helpers'
+import { isEmpty } from '~/lib/utils'
 
 // styles
 import styles from '~/components/custom/styles/Lightbox.module.sass'

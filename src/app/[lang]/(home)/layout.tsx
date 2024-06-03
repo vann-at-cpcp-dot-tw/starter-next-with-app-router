@@ -1,6 +1,6 @@
 import { cloneElement } from 'react'
-import { isEmpty } from '~/lib/helpers'
-import { ScopeStoreProvider } from "vanns-common-modules/dist/providers/react"
+import { isEmpty } from '~/lib/utils'
+import { ScopeStoreProvider } from "./scope-store"
 
 async function getHomePageData(){
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/wp-json/api/v1/homeDatas`, {

@@ -1,6 +1,6 @@
 import '~~/public/external-import.css'
 
-import { isEmpty } from '~/lib/helpers'
+import { isEmpty } from '~/lib/utils'
 import Header from '~/components/custom/Header'
 import Footer from '~/components/custom/Footer'
 import Providers from '~/app/[lang]/providers'

@@ -1,4 +1,4 @@
-import { isEmpty } from '~/lib/helpers'
+import { isEmpty } from '~/lib/utils'
 
 export default async function ContactLayout({
   children
