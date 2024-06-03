@@ -20,6 +20,23 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
   webpack: (config, { dev, isServer })=>{
+    config.module.rules.push(
+      {
+        test: /\.(graphql|gql)/,
+        exclude: /node_modules/,
+        loader: "graphql-tag/loader"
+      },
+      {
+        test: /\.(js|jsx)$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react'],
+          },
+        },
+      }
+    )
+
     config.plugins.push(
       new webpack.ProvidePlugin({
         React: 'react',
