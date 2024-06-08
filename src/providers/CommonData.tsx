@@ -2,7 +2,7 @@
 
 import { createScopeStoreProvider } from "vanns-common-modules/dist/providers/react"
 
-interface ICommonData {
+export interface ICommonData {
   [key:string]: any
 }
 
