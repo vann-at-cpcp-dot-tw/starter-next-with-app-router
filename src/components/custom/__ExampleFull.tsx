@@ -13,16 +13,16 @@ import LinkWithLang from "~/components/custom/LinkWithLang"
 import { isEmpty } from '~/lib/utils'
 import { useStore } from '~/store'
 
-interface TypeProps {
+interface IProps {
   [key:string]: any
 }
-interface TypeState {}
+interface IState {}
 
-function __SampleFull(props:TypeProps, ref:React.ReactNode){
+function ExampleFull(props:IProps, ref:React.ReactNode){
   const store = useStore()
   const router = useRouter()
   const viewport = useWindowSize()
-  const [state, setState] = useReducer((state:TypeState, updateState:{})=>({...state, ...updateState}), {
+  const [state, setState] = useReducer((state:IState, updateState:{})=>({...state, ...updateState}), {
     // init state
   })
   const { className } = props
@@ -32,4 +32,4 @@ function __SampleFull(props:TypeProps, ref:React.ReactNode){
   </Suspense>
 }
 
-export default __SampleFull
+export default ExampleFull

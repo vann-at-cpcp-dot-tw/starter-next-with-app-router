@@ -6,18 +6,18 @@ import Image from "next/image"
 import LinkWithLang from "~/components/custom/LinkWithLang"
 import { isEmpty } from '~/lib/utils'
 
-interface TypeProps {
+interface IProps {
   params: {
     lang: string
   }
 }
-interface TypeState {}
+interface IState {}
 
-function Page({params}:TypeProps){
+function ExamplePage({params}:IProps){
   const { lang } = params
 
   return <main>
   </main>
 }
 
-export default Page
+export default ExamplePage

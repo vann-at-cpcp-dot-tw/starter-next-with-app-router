@@ -7,16 +7,15 @@ import { useWindowSize } from "vanns-common-modules/dist/use/react"
 
 import styles from '~/components/custom/styles/index.module.sass'
 import { isEmpty } from '~/lib/utils'
-import { routes } from '~/routes'
 import { useStore } from '~/store'
 
-interface TypeProps {
+interface IProps {
   id: string
   className?: string
   color?: string
 }
 
-function LightboxClose(props:TypeProps){
+function LightboxClose(props:IProps){
 
   const store = useStore()
   const viewport = useWindowSize()

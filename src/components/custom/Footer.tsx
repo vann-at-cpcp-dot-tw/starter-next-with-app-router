@@ -9,19 +9,19 @@ import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { useStore } from '~/store'
 
 
-interface TypeProps {
+interface IProps {
   className?: string
 }
-interface TypeState {
+interface IState {
   footerHeight: number
 }
 
-function Footer(props:TypeProps, ref:React.ReactNode){
+function Footer(props:IProps, ref:React.ReactNode){
   const store = useStore()
   const router = useRouter()
   const viewport = useWindowSize()
   const footerRef = useRef<HTMLDivElement>(null)
-  const [state, setState] = useReducer((state:TypeState, updateState:{})=>({...state, ...updateState}), {
+  const [state, setState] = useReducer((state:IState, updateState:{})=>({...state, ...updateState}), {
     // init state
     footerHeight: 0,
   })

@@ -6,14 +6,14 @@ import LinkWithLang from "~/components/custom/LinkWithLang"
 import { isEmpty } from '~/lib/utils'
 import { i18n } from "~~/i18n.config"
 
-interface TypeProps {
+interface IProps {
   params: {
     lang: string
   }
 }
-interface TypeState {}
+interface IState {}
 
-function PageNotFound({params}:TypeProps){
+function PageNotFound({params}:IProps){
   const { lang } = params
 
   return <main className="flex grow flex-col justify-center py-24">

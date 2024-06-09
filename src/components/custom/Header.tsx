@@ -9,22 +9,45 @@ import { twMerge } from 'tailwind-merge'
 import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { useDomNodeSize } from "vanns-common-modules/dist/use/react"
 
-import { menu, TypeRouteNode } from '~/routes'
 import { useStore } from '~/store'
 
-
-interface TypeProps {
+interface IProps {
   className?: string
 }
 
-interface TypeState {}
+interface IState {}
 
-function Header(props:TypeProps, ref:React.ReactNode){
+interface IMenuNode {
+  pathname: string
+  meta?: {
+    [key:string]: string | number | boolean | null,
+  }
+  children?: IMenuNode[]
+}
+
+const menu = [
+  {
+    pathname: '/about/',
+    meta: {
+      title: 'Next 13 Site - About',
+      menu_label: 'ABOUT ME',
+    },
+  },
+  {
+    pathname: '/contact/',
+    meta: {
+      title: 'Next 13 Site - Contact',
+      menu_label: 'CONTACT',
+    },
+  },
+]
+
+function Header(props:IProps, ref:React.ReactNode){
   const store = useStore()
   const { size:headerSize, setNode:setHeaderNode } = useDomNodeSize()
   const router = useRouter()
   const viewport = useWindowSize()
-  const [state, setState] = useReducer((state:TypeState, updateState:{})=>({...state, ...updateState}), {
+  const [state, setState] = useReducer((state:IState, updateState:{})=>({...state, ...updateState}), {
     // init state
   })
 
@@ -45,7 +68,7 @@ function Header(props:TypeProps, ref:React.ReactNode){
             </Link>
           </div>
           {
-            menu.map((node:TypeRouteNode, index:number)=>{
+            menu.map((node:IMenuNode, index:number)=>{
               return <Link href={node.pathname} key={index}>
                 <div className="col-auto hidden lg:block">
                   <div className="btn-scaleUp font-bold">{node?.meta?.menu_label}</div>

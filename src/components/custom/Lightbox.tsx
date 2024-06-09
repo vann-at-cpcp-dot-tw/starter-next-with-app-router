@@ -8,17 +8,16 @@ import { useWindowSize } from "vanns-common-modules/dist/use/react"
 
 import styles from '~/components/custom/styles/Lightbox.module.sass'
 import { isEmpty } from '~/lib/utils'
-import { routes } from '~/routes'
 import { useStore } from '~/store'
 
-interface TypeProps {
+interface IProps {
   id: string
   className?: string
   maxWidth?: string
   children?: React.ReactNode
 }
 
-function Lightbox(props:TypeProps){
+function Lightbox(props:IProps){
   const store = useStore()
   const innerRef = useRef(null)
   const lightboxRef = useRef(null)

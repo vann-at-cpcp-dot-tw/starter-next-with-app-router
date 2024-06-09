@@ -13,12 +13,12 @@ import { isEmpty } from '~/lib/utils'
 // import { useStore } from '~/store'
 // import useWindowSize from "vanns-common-modules/dist/use/react/useWindowSize"
 
-interface TypeProps {
+interface IProps {
   [key:string]: any
 }
-interface TypeState {}
+interface IState {}
 
-function Sample(props:TypeProps, ref:React.ReactNode){
+function Example(props:IProps, ref:React.ReactNode){
   // const store = useStore()
   // const router = useRouter()
   // const viewport = useWindowSize()
@@ -28,4 +28,4 @@ function Sample(props:TypeProps, ref:React.ReactNode){
   </Suspense>
 }
 
-export default Sample
+export default Example
