@@ -2,10 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from './page.module.css'
-import { useStore } from '~/store'
 import { useWindowSize } from "vanns-common-modules/dist/use/react"
+
 import { Button } from '~/components/ui/button'
+import { useStore } from '~/store'
+
+import styles from './page.module.css'
 
 export default function About(){
 

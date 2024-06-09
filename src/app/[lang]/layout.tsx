@@ -1,9 +1,9 @@
 import '~~/public/external-import.css'
 
-import { isEmpty } from '~/lib/utils'
-import Header from '~/components/custom/Header'
-import Footer from '~/components/custom/Footer'
 import Providers from '~/app/[lang]/providers'
+import Footer from '~/components/custom/Footer'
+import Header from '~/components/custom/Header'
+import { isEmpty } from '~/lib/utils'
 
 export const metadata = {
   title: 'NEXT WITH APP ROUTER',

@@ -2,21 +2,13 @@
 
 import { Suspense, useState, useEffect, useMemo, useCallback } from 'react'
 
-// routes
-import { routes } from '~/routes'
-
-// store
-import { useStore } from '~/store'
-
-// use
-import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { twMerge } from 'tailwind-merge'
+import { useWindowSize } from "vanns-common-modules/dist/use/react"
 
-// methods & components
-import { isEmpty } from '~/lib/utils'
-
-// styles
 import styles from '~/components/custom/styles/index.module.sass'
+import { isEmpty } from '~/lib/utils'
+import { routes } from '~/routes'
+import { useStore } from '~/store'
 
 interface TypeProps {
   id: string

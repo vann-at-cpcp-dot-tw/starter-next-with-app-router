@@ -2,22 +2,14 @@
 
 import { Suspense, useState, useRef, useEffect, useMemo, useCallback } from 'react'
 
-// routes
-import { routes } from '~/routes'
-
-// store
-import { useStore } from '~/store'
-
-// use
-import { useWindowSize } from "vanns-common-modules/dist/use/react"
 import { twMerge } from 'tailwind-merge'
-
-// methods & components
 import Portal from 'vanns-common-modules/dist/components/react/Portal'
-import { isEmpty } from '~/lib/utils'
+import { useWindowSize } from "vanns-common-modules/dist/use/react"
 
-// styles
 import styles from '~/components/custom/styles/Lightbox.module.sass'
+import { isEmpty } from '~/lib/utils'
+import { routes } from '~/routes'
+import { useStore } from '~/store'
 
 interface TypeProps {
   id: string

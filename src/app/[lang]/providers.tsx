@@ -1,8 +1,10 @@
 import '~/styles/index.sass'
 import { ReactNode } from 'react'
-import { CommonDataProvider, ICommonData } from "~/providers/CommonData"
+
 import { ReactQueryClientProvider } from "vanns-common-modules/dist/providers/react"
+
 import ApolloProvider from "~/providers/Apollo"
+import { CommonDataProvider, ICommonData } from "~/providers/CommonData"
 
 export default function Providers({
   children,
