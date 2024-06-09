@@ -13,11 +13,9 @@ interface IProps {
 }
 interface IState {}
 
-function ExamplePage({params}:IProps){
+export default function ExamplePage({params}:IProps){
   const { lang } = params
 
   return <main>
   </main>
 }
-
-export default ExamplePage

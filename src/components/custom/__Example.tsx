@@ -18,7 +18,7 @@ interface IProps {
 }
 interface IState {}
 
-function Example(props:IProps, ref:React.ReactNode){
+export default function Example(props:IProps, ref:React.ReactNode){
   // const store = useStore()
   // const router = useRouter()
   // const viewport = useWindowSize()
@@ -27,5 +27,3 @@ function Example(props:IProps, ref:React.ReactNode){
     <div className={twMerge('', className)}></div>
   </Suspense>
 }
-
-export default Example
