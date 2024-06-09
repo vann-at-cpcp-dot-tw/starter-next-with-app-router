@@ -14,9 +14,13 @@ import { isEmpty } from '~/lib/utils'
 import { useStore } from '~/store'
 
 interface IProps {
+  id?: string
+  className?: string
+}
+
+interface IState {
   [key:string]: any
 }
-interface IState {}
 
 export default function ExampleFull(props:IProps, ref:React.ReactNode){
   const store = useStore()
@@ -25,7 +29,7 @@ export default function ExampleFull(props:IProps, ref:React.ReactNode){
   const [state, setState] = useReducer((state:IState, updateState:{})=>({...state, ...updateState}), {
     // init state
   })
-  const { className } = props
+  const { id, className } = props ?? {}
 
   return <Suspense fallback={null}>
     <div className={twMerge('', className)}></div>

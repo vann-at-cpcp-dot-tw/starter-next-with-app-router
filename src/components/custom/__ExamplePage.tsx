@@ -11,7 +11,10 @@ interface IProps {
     lang: string
   }
 }
-interface IState {}
+
+interface IState {
+  [key:string]: any
+}
 
 export default function ExamplePage({params}:IProps){
   const { lang } = params
