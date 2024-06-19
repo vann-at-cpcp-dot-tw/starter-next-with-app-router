@@ -7,6 +7,17 @@ import { isEmpty } from '~/lib/utils'
 
 import { ScopeStoreProvider } from "./scope-store"
 
+interface IProps {
+  params: {
+    lang: string
+  }
+}
+
+interface IState {
+  [key:string]: any
+}
+
+
 async function getHomePageData(){
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/wp-json/api/v1/homeDatas`, {
   //   method: 'GET',
@@ -22,15 +33,7 @@ async function getHomePageData(){
   return {hello:'world'}
 }
 
-export default async function Home({
-  params,
-  children,
-}:{
-  params: {
-    lang: string
-  }
-  children: React.ReactNode,
-}) {
+export default async function Home({params}:IProps) {
 
   const data = await getHomePageData()
 
