@@ -10,9 +10,10 @@ import { isEmpty } from '~/lib/utils'
 import { useStore } from '~/store'
 
 interface IProps {
-  id: string
+  id?: string
   className?: string
   color?: string
+  onClose?: Function
 }
 
 function LightboxClose(props:IProps){
@@ -25,7 +26,12 @@ function LightboxClose(props:IProps){
       const target = e.target as HTMLElement
       const targetId = target.id
       if( target.dataset.el === 'lightbox' ){
-        store.lightboxClose(targetId)
+        if( props?.id ){
+          store.lightboxClose(props.id)
+        }else{
+          store.lightboxClose(targetId)
+        }
+        props?.onClose?.()
       }
     }
 
@@ -35,12 +41,18 @@ function LightboxClose(props:IProps){
       document.body.removeEventListener('click', lightboxClickHandler)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [props.id])
 
   return <div className={twMerge('close flex justify-end', props?.className)}>
     <div className="btn flex size-10 items-center justify-center"
-    onClick={()=>{
-      store.lightboxClose(props.id)
+    onClick={(e)=>{
+      const targetId = (e.target as HTMLDivElement)?.closest?.('[data-el="lightbox"]')?.id
+      if( props?.id ){
+        store.lightboxClose(props.id)
+      }else{
+        store.lightboxClose(targetId)
+      }
+      props?.onClose?.()
     }}
     style={{
       marginRight: viewport.width && viewport.width >= 992 ?'-20px' :'-10px',
