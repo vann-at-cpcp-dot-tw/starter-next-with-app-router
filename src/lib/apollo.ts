@@ -31,9 +31,11 @@ export async function fetchGQL(query:TypedDocumentNode, args?:IFetchGQLArgs){
   const contextHeaders = context?.headers || {}
   const requestLang = headers().get('x-lang') || i18n.defaultLocale.shortCode
   // const localeCode = convertLocaleCode(lang, 'long')
-  return await fetchGQLWrapper(query, {
+
+  const formattedFetchArgs = {
     ...restArgs,
     context: {
+      uri: context?.uri || API_URL,
       ...(context || {}),
       headers: {
         ...contextHeaders
@@ -45,5 +47,7 @@ export async function fetchGQL(query:TypedDocumentNode, args?:IFetchGQLArgs){
       // language: requestLang.toUpperCase(),
       // translation: requestLang.toUpperCase(),
     }
-  })
+  }
+
+  return await fetchGQLWrapper(query, formattedFetchArgs)
 }
