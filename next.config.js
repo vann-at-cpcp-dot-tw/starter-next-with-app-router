@@ -6,7 +6,6 @@ const webpack = require('webpack')
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   env: {},
   // assetPrefix:  process.env.NODE_ENV === "production" ?'/' :'',
   // serverRuntimeConfig: {
@@ -28,21 +27,27 @@ const nextConfig = {
       // },
     ],
   },
+  turbopack: {
+    rules: {
+      '*.graphql': {
+        loaders: ['graphql-tag/loader'],
+        as: '*.js',
+      },
+      '*.gql': {
+        loaders: ['graphql-tag/loader'],
+        as: '*.js',
+      },
+    },
+  },
+  experimental: {
+    webpackMemoryOptimizations: true,
+  },
   webpack: (config, { dev, isServer })=>{
     config.module.rules.push(
       {
         test: /\.(graphql|gql)/,
         exclude: /node_modules/,
         loader: "graphql-tag/loader"
-      },
-      {
-        test: /\.(js|jsx)$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react'],
-          },
-        },
       }
     )
 

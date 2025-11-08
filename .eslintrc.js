@@ -1,6 +1,4 @@
-const { defineConfig } = require('eslint-define-config')
-
-module.exports = defineConfig({
+module.exports = {
   globals: {
     _: 'readonly',
     lodash: 'readonly',
@@ -56,4 +54,4 @@ module.exports = defineConfig({
     'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/classnames-order': ['warn']
   }
-})
+}

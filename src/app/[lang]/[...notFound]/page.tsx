@@ -7,14 +7,14 @@ import { isEmpty } from '~/lib/utils'
 import { i18n } from "~~/i18n.config"
 
 interface IProps {
-  params: {
+  params: Promise<{
     lang: string
-  }
+  }>
 }
 interface IState {}
 
-function PageNotFound({params}:IProps){
-  const { lang } = params
+async function PageNotFound({params}:IProps){
+  const { lang } = await params
 
   return <main className="flex grow flex-col justify-center py-24">
     <div className="container">

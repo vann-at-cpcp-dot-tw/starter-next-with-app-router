@@ -8,9 +8,9 @@ import { isEmpty } from '~/lib/utils'
 import { ScopeStoreProvider } from "./scope-store"
 
 interface IProps {
-  params: {
+  params: Promise<{
     lang: string
-  }
+  }>
 }
 
 interface IState {
@@ -34,7 +34,7 @@ async function getHomePageData(){
 }
 
 export default async function Home({params}:IProps) {
-
+  const { lang } = await params
   const data = await getHomePageData()
 
   return <ScopeStoreProvider state={{data}}>

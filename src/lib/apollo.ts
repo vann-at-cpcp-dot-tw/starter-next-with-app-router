@@ -29,7 +29,8 @@ const fetchGQLWrapper = makeFetcher(getClient)
 export async function fetchGQL(query:TypedDocumentNode, args?:IFetchGQLArgs){
   const { context, ...restArgs } = args ?? {}
   const contextHeaders = context?.headers || {}
-  const requestLang = headers().get('x-lang') || i18n.defaultLocale.shortCode
+  const headersList = await headers()
+  const requestLang = headersList.get('x-lang') || i18n.defaultLocale.shortCode
   // const localeCode = convertLocaleCode(lang, 'long')
 
   const formattedFetchArgs = {

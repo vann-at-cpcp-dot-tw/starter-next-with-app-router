@@ -16,7 +16,7 @@ interface IState {
   footerHeight: number
 }
 
-function Footer(props:IProps, ref:React.ReactNode){
+function Footer(props:IProps){
   const store = useStore()
   const router = useRouter()
   const viewport = useWindowSize()

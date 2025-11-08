@@ -36,7 +36,7 @@ const menu = [
   },
 ]
 
-function Header(props:IProps, ref:React.ReactNode){
+function Header(props:IProps){
   const store = useStore()
   const { size:headerSize, setNode:setHeaderNode } = useDomNodeSize()
   const router = useRouter()
